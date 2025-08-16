@@ -1,0 +1,21 @@
+[build]
+  publish = "."
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Cache-Control = "public, max-age=30"
+
+[[edge_functions]]
+  path = "/api/status"
+  function = "status"
+
+[[edge_functions]]
+  path = "/api/memories"
+  function = "memories"
+
+[[edge_functions]]
+  path = "/api/cycle"
+  function = "cycle"
